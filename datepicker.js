@@ -177,9 +177,12 @@ class DatePicker extends Component {
         </Text>
       );
     }
+    let formatedDate = this.getDateStr()
+    let dateArray = formatedDate.split("-")
+    let dateString = dateArray && dateArray.length > 1 ? dateArray[1] + "-" + dateArray[2] + "-" + dateArray[0] : "Invalid date"
     return (
       <Text allowFontScaling={allowFontScaling} style={[Style.dateText, customStyles.dateText]}>
-        {this.getDateStr()}
+        {dateString}
       </Text>
     );
   }
